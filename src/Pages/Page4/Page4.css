@@ -1,0 +1,32 @@
+.single-movie-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    width: 100%;
+  }
+  
+  .single-product-img{
+    height: 400px;
+    width: 350px;
+    object-fit: cover;
+  }
+  
+  .movie-details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: start;
+    align-items: start;
+    padding: 0px 15px;
+  }
+  
+  .movie-details h2{
+    margin: 0px 0px 10px 0px;
+  }
+  
+  .movie-details p{
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0px 0px 8px 0px;
+  }

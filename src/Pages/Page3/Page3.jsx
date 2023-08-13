@@ -1,18 +1,18 @@
 import { useContext } from "react";
-import "./Page2.css";
+import "./Page3.css";
 import { DataContext } from "../../App";
 import MovieListing from "../../Components/MovieListing/MovieListing";
 
-const Page2 = () => {
+const Page3 = () => {
   const { moviesData } = useContext(DataContext)
-  const watchlistData = moviesData.filter( (movie) => movie.watchlist)
-  console.log(watchlistData)
+  const starData = moviesData.filter( (movie) => movie.star)
+//   console.log(watchlistData)
 
   return (
     <body>
-      <h1>WatchList</h1>
-      <MovieListing data={ watchlistData } />
+      <h1>Stared</h1>
+      <MovieListing data={ starData } />
     </body>
   );
 };
-export default Page2;
+export default Page3;

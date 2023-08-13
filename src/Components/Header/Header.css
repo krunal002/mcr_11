@@ -1,0 +1,13 @@
+.header-container{
+    margin: 0 0 1rem 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.component-container{
+    display: flex;
+    gap: 1rem;
+}

@@ -1,0 +1,13 @@
+.movie-container{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.individual-movie-container{
+    max-width: 300px;
+}
+.movie-poster{
+    width: 300px;
+    height: 400px;
+}
