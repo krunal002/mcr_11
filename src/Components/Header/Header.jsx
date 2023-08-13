@@ -1,22 +1,10 @@
 import { Link } from "react-router-dom";
 import "./Header.css"
+import { useContext } from "react";
+import { DataContext } from "../../App";
 const Header = () => {
-
-    const filterBySearch = (dataset) => {
-        if (searchText === "") {
-          return dataset;
-        } else {
-          const temp = moviesList.filter(
-            (movie) =>
-              movie.title.toLowerCase().includes(searchText.toLowerCase()) ||
-              movie.director.toLowerCase().includes(searchText.toLowerCase()) ||
-              movie.cast.toString().toLowerCase().includes(searchText.toLowerCase())
-          );
-    
-          return temp;
-        }
-      };
-
+    const { search, setSearch } = useContext(DataContext);
+    console.log(search)
 
   return (
     <div className="header-container">
@@ -24,7 +12,7 @@ const Header = () => {
         <h1>IMDB</h1>
       </div>
       <div>
-        <input type="search" />
+        <input type="search" value={search} onChange={(e) => setSearch(e.target.value)}/>
       </div>
       <div className="component-container">
         <p>Movies</p>

@@ -7,16 +7,24 @@ export const DataContextHandler = ({ children }) => {
   localStorage.setItem("movie-data", JSON.stringify(movies));
 
   const [ moviesData, setMoviesData ] = useState(JSON.parse(localStorage.getItem("movie-data")))
+  const [search, setSearch] = useState("");
   const [genre, setGenre] = useState("");
   const [year, setYear] = useState("");
   const [rating, setRating] = useState("");
 
   const reqData = JSON.parse(localStorage.getItem("movie-data"));
+ 
+  const searchdata = search === "" ?reqData :reqData.filter(
+            (movie) =>
+              movie.title.toLowerCase().includes(search.toLowerCase()) ||
+              movie.director.toLowerCase().includes(search.toLowerCase()) ||
+              movie.cast.toString().toLowerCase().includes(search.toLowerCase())
+          )
 
   const genreData =
     genre === ""
-      ? reqData
-      : reqData.filter((movie) => movie.genre.includes(genre));
+      ? searchdata
+      : searchdata.filter((movie) => movie.genre.includes(genre));
 
   const yearData =
     year === ""
@@ -27,7 +35,6 @@ export const DataContextHandler = ({ children }) => {
     rating === ""
       ? yearData
       : yearData.filter((movie) => movie.rating === Number(rating));
-
 
 useEffect(() => {
   setMoviesData(ratingData)
@@ -45,6 +52,7 @@ console.log( moviesData)
           setYear,
           rating,
           setRating,
+          search, setSearch
         }}
       >
         {children}
