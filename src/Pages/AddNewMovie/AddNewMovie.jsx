@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { DataContext } from "../../App";
 import { Button, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Header from "../../Components/Header/Header";
 
 const AddNewMovie = () => {
   const navigate = useNavigate();
@@ -65,6 +66,8 @@ const AddNewMovie = () => {
 
   return (
     <div>
+      <Header />
+
       <Box
         component="form"
         sx={{

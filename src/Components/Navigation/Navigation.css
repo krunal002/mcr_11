@@ -1,4 +1,6 @@
 .navigation-container{
+    padding: 0 8px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }

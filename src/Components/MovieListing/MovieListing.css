@@ -1,13 +1,25 @@
-.movie-container{
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    flex-wrap: wrap;
+.movie-container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap;
+  max-width: 1300px;
+  margin: auto;
 }
-.individual-movie-container{
-    max-width: 300px;
+
+.individual-movie-container {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px 3px #ddd;
+  overflow: hidden;
 }
-.movie-poster{
-    width: 300px;
-    height: 400px;
+.individual-movie-container p {
+  flex-grow: 1;
+}
+
+.movie-poster {
+  width: 300px;
+  height: 400px;
 }

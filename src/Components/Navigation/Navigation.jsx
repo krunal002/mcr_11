@@ -122,6 +122,7 @@ const Navigation = () => {
           <Button
             variant="contained"
             onClick={() => navigate("/add-new-movie")}
+            sx={{backgroundColor:"black"}}
           >
             Add Movie
           </Button>

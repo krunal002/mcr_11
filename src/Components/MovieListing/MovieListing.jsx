@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 const MovieListing = ({ data }) => {
   const navigate = useNavigate();
   const { moviesData, setMoviesData } = useContext(DataContext);
+
   const starHandle = (movie) => {
     const update = moviesData.map((req) =>
       req.id === movie.id ? { ...req, star: !req.star } : req
@@ -33,14 +34,20 @@ const MovieListing = ({ data }) => {
         const isWatch = movie.watchlist;
         return (
           <div className="individual-movie-container">
-            <img src={movie.imageURL} alt="poster" className="movie-poster" onClick={() => navigate(`/movie/${movie.id}`)}/>
+            <img
+              src={movie.imageURL}
+              alt="poster"
+              className="movie-poster"
+              onClick={() => navigate(`/movie/${movie.id}`)}
+            />
             <h2>{movie.title}</h2>
             <p>{movie.summary}</p>
-            <Stack spacing={2} direction="row">
+            <Stack spacing={2} direction="row" sx={{ m: 1 }}>
               <Button
                 variant="contained"
                 size="small"
                 onClick={() => starHandle(movie)}
+                sx={{ backgroundColor: "black" }}
               >
                 {isStared ? "Unstar" : "Star"}
               </Button>
@@ -48,6 +55,7 @@ const MovieListing = ({ data }) => {
                 variant="outlined"
                 size="small"
                 onClick={() => watchlistHandle(movie)}
+                sx={{ color: "black" }}
               >
                 {isWatch ? "Go to Watchlist" : "Add to Watchlist"}
               </Button>

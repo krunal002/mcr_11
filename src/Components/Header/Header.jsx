@@ -1,27 +1,40 @@
+import "./Header.css";
 import { Link } from "react-router-dom";
-import "./Header.css"
 import { useContext } from "react";
 import { DataContext } from "../../App";
-const Header = () => {
-    const { search, setSearch } = useContext(DataContext);
-    console.log(search)
 
+const Header = () => {
+  const { search, setSearch } = useContext(DataContext);
+  // console.log("Ready..?")
   return (
-    <div className="header-container">
+    <header className="header-container">
       <div>
         <h1>IMDB</h1>
       </div>
+
       <div>
-        <input type="search" value={search} onChange={(e) => setSearch(e.target.value)}/>
+        <input
+          type="search"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="search-wrapper"
+          placeholder="Search movies..."
+        />
       </div>
-      <div className="component-container">
-        <p>Movies</p>
-        
-        <Link to='/page2'><p>Watch List</p></Link>
-        <Link to='/page3'> <p>starred Movies</p></Link>
-       
-      </div>
-    </div>
+
+      <nav className="navlink-container">
+        <Link to="/" className="section-link-wrapper">
+          <p>Movies</p>
+        </Link>
+        <Link to="/page2" className="section-link-wrapper">
+          <p>Watch List</p>
+        </Link>
+        <Link to="/page3" className="section-link-wrapper">
+          {" "}
+          <p>starred Movies</p>
+        </Link>
+      </nav>
+    </header>
   );
 };
 export default Header;

@@ -1,13 +1,24 @@
-.header-container{
-    margin: 0 0 1rem 0;
-    background-color: black;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.header-container {
+  background-color: black;
+  color: #ddd;
+  padding: 0 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.component-container{
-    display: flex;
-    gap: 1rem;
+.search-wrapper {
+  padding: 10px;
+  width: 300px;
+  border: none;
+  border-radius: 4px;
+}
+
+.navlink-container {
+  display: flex;
+  gap: 1rem;
+}
+.section-link-wrapper {
+  text-decoration: none;
+  color: #ddd;
 }

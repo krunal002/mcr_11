@@ -13,7 +13,7 @@ export { DataContext }
 function App() {
   return (
     <div className="App">
-      <h1>MCR-11</h1>
+      {/* <h1>MCR-11</h1> */}
       <Routes>
         <Route path='/' element={<Page1/>}/>
         <Route path='/page2' element={<Page2/>}/>
